@@ -29,17 +29,17 @@ function getActorInfo(query) {
       }
       throw new Error(response.statusText);
     })
-    .then(responseJson => console.log(JSON.stringify(responseJson)))
+    .then(responseJson => console.log(responseJson))
     .catch(err => {
       $('#error-message').text(`Whoops: ${err.message}`);
     });
 }
 
 function watchForm() {
-  $('#name').submit(e => {
-        e.preventDefault();
-  const searchName = $('#name').val();
-  console.log(searchName);
-})
-}
+  $('form').submit(e => {
+    e.preventDefault();
+    const query = $("#search-term").val();
+    const maxResults = $("results").val();
+    getInfo(query, maxResults);
+    console.log(searchSite);
 $(watchForm);

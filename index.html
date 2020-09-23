@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
-    <title>Garden Information App</title>
+    <title>Find Your Stream</title>
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
 <body>
@@ -14,9 +14,8 @@
             <form id="form">
                 <label for='search-term'>Search: Enter Movie or Show</label>
                     <input type="text" name="search" id='search-term'>
-                    <label for="name">Enter a name:</label>
-                     <input type='text' id='name'>
-     -->
+                    
+
                     <input type='submit' class="button" value="Get Info">
     
             </form>
@@ -25,7 +24,7 @@
     </div>
 </section>
 <p id="error" class="error-message"></p>
-<section id="results"><div>
+<section id="results" class="hidden"><div>
     <h2>Results</h2>
     <ul class="results-listing">
     </ul>
@@ -34,6 +33,6 @@
 <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
-    <script src="actor.js"></script>
+    <!-- <script src="actor.js"></script> -->
 
 </body>

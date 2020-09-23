@@ -16,6 +16,9 @@
   .button, input[type="text"] {
     padding: 5px;
   }
+  ul , li {
+    list-style: none;
+  }
   
   
   .button {
