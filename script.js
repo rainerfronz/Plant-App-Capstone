@@ -5,25 +5,28 @@ const search = "https://imdb8.p.rapidapi.com/title/auto-complete";
 //function to set paramaters
 
 function formatQuery(params) {
+    console.log('it works');
     //create an array of the keys in the "params" object
     const queryItems = Object.keys(params)
 
         .map(key => `${key}=${params[key]}`)
 
     return queryItems.join('&');
-    console.log(queryItems);
 }
 //function to fetch info
 
 function getInfo(query) {
     const params = {
         term: query,
+        country: "us"
 
     };
+
     const queryStr = formatQuery(params);
     const url = searchSite + '?' + queryStr;
-
+    console.log(params);
     console.log(url);
+    console.log(queryStr);
 
     const options = {
         headers: new Headers({
@@ -31,68 +34,48 @@ function getInfo(query) {
         })
     };
     fetch(url, options)
-        .then(response => response.json())
-        .then(responseJson => displayResults(responseJson));
+        .then(response => {
+            if (response.ok) {
+                return response.json();
+            }
+            throw new Error(response.statusText);
+        })
+        .then(responseJson => displayResults(responseJson))
+        .catch(err => {
+            $('#error').text(`Try Again: ${err.message}`);
+        })
+
 }
 
-// function getActorInfo(query) {
-//     const params = {
-//       q: query,
-//       pageSize: maxResults,
-//     };
-//     const queryStr = formatParamaters(params)
-//     const url2 = search + '?' + queryStr;
-//     console.log(url);
-//     const options = {
-//       headers: new Headers({
-//         "x-rapidapi-key": apiKey2
-//       })
-//     }
 
-//     fetch(url2, options)
-//       .then(response => {
-//         if (response.ok) {
-//           return response.json();
-//         }
-//         throw new Error(response.statusText);
-//       })
-//       .then(responseJson => console.log(responseJson))
-//       .catch(err => {
-//         $('#error-message').text(`Whoops: ${err.message}`);
-//       });
-//   }
-
-
-function displayResults(responseJson) {
+function displayResults(responseJson, result) {
     console.log(responseJson);
-    const showName = responseJson.results[0].name;
-    const locations = responseJson.results[0].locations;
+    // const showName = responseJson.results[0].name;
+    //  const locations = responseJson.results[0].locations;
     $('.results-listing').empty();
     $('#error').empty();
     for (let i = 0; i < responseJson.results.length; i++) {
-
+        console.log(i);
+        let result = responseJson.results[i];
         // show name
-        console.log(showName);
+        console.log(result);
 
         // streaming services:
-        for (let i = 0; i < locations.length; i++) {
-            console.log(locations[i].display_name);
-            console.log(locations[i].url);
+        for (var x = 0; x < result.locations.length; x++) {
+            console.log(x);
+            // console.log(result.locations[i].display_name);
+            // console.log(result.locations[i].url);
         }
         $('.results-listing').append(
             `<p>${responseJson.results[i].name}</p>
-                        <p>${locations[i].display_name}</p>
-                    <li><h3><a href=${locations[i].url}>LINK</a></h3>
-                   
-                        </li>`);
-
+            <p>${result.locations[x].display_name}</p>
+            <li><h3><a href=${result.locations[x].url}>LINK</a></h3>
+             </li>`);
     }
-
 
     $('#results').removeClass('hidden');
 
 }
-
 function watchForm() {
     $('form').submit(e => {
         e.preventDefault();
@@ -104,13 +87,5 @@ function watchForm() {
 
     });
 }
-
-
-//function to display
-
-// function display() {
-
-// }
-
 
 $(watchForm);
