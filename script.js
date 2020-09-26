@@ -24,9 +24,11 @@ function getInfo(query) {
 
     const queryStr = formatQuery(params);
     const url = searchSite + '?' + queryStr;
+    const imdbUrl = search + '?' + 'q=' + query;
     console.log(params);
     console.log(url);
     console.log(queryStr);
+    console.log(imdbUrl);
 
     const options = {
         headers: new Headers({
@@ -43,6 +45,13 @@ function getInfo(query) {
         .then(responseJson => displayResults(responseJson))
         .catch(err => {
             $('#error').text(`Try Again: ${err.message}`);
+
+        })
+        fetch(search, options)
+        .then(data => {
+            if (data.ok) {
+                return  response.json()
+            }
         })
 
 }
@@ -65,6 +74,7 @@ function displayResults(responseJson, result) {
             console.log(x);
             // console.log(result.locations[i].display_name);
             // console.log(result.locations[i].url);
+            // for (var z = 0; z < data.length; z++)
         }
         $('.results-listing').append(
             `<p>${responseJson.results[i].name}</p>
