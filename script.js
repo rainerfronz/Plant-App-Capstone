@@ -47,18 +47,10 @@ function getInfo(query) {
             $('#error').text(`Try Again: ${err.message}`);
 
         })
-        fetch(search, options)
-        .then(data => {
-            if (data.ok) {
-                return  response.json()
-            }
-        })
-
 }
 
-
 function displayResults(responseJson, result) {
-    console.log(responseJson);
+    // console.log(responseJson);
     // const showName = responseJson.results[0].name;
     //  const locations = responseJson.results[0].locations;
     $('.results-listing').empty();
@@ -70,19 +62,19 @@ function displayResults(responseJson, result) {
         console.log(result);
 
         // streaming services:
-        for (var x = 0; x < result.locations.length; x++) {
+        for (let x = 0; x < result.locations.length; x++) {
             console.log(x);
             // console.log(result.locations[i].display_name);
             // console.log(result.locations[i].url);
             // for (var z = 0; z < data.length; z++)
-        }
-        $('.results-listing').append(
-            `<p>${responseJson.results[i].name}</p>
-            <p>${result.locations[x].display_name}</p>
-            <li><h3><a href=${result.locations[x].url}>LINK</a></h3>
-             </li>`);
-    }
 
+            $('.results-listing').append(
+                `<li>${responseJson.results[i].name}</li>
+            <li>${result.locations[x].display_name}</li>
+            <li><a href=${result.locations[x].url}>Service Link</a>
+                </li>`);
+        }
+    }
     $('#results').removeClass('hidden');
 
 }
