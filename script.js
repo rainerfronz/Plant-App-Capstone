@@ -116,34 +116,7 @@ async function getTitleInfo(showId) {
             $('#error').text(`Try Again: ${err.message}`);
         });
 }
-async function getCast(showId) {
-    opt = {
-        tconst: showId
-    }
-    const getCast = "https://imdb8.p.rapidapi.com/title/get-top-cast";
-    const queryStr = formatQuery(opt);
-    const getTopCast = getCast + '?' + queryStr;
-    console.log(getTopCast);
-    const options = {
-        headers: new Headers({
-            "x-rapidapi-key": apiKey
-        })
-    };
-    const castInfo = await fetch(getTopCast, options)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw new Error(response.statusText)
-        })
-        .then(responseCast => {
-            console.log(responseCast);
-        })
-        .catch(err => {
-            $('#error').text(`Try Again: ${err.message}`);
-        });
 
-}
 
 
 
