@@ -18,7 +18,7 @@ async function handleQuery(query) {
     const showId = await getShowId(query);
     console.log(showId);
     const showInfo = await getTitleInfo(showId);
-    console.log(showInfo);
+
 }
 
 function getInfo(query) {
@@ -110,8 +110,8 @@ async function getTitleInfo(showId) {
             throw new Error(response.statusText);
         })
         .then(responseData => {
-            console.log(responseData);
-            console.log('show find')
+            displayInfo(responseData);
+            
             console.log(responseData.genres[0]); // need loop in display for genres
             console.log(responseData.plotSummary.text);
             console.log(responseData.ratings.rating);
@@ -121,14 +121,13 @@ async function getTitleInfo(showId) {
         .catch(err => {
             $('#error').text(`Try Again: ${err.message}`);
         })
-        console.log(showInfo);
-    return showInfo;
+        
     ;
 }
 
 
 
-function displayResults(responseJson, responseData) {
+function displayResults(responseJson) {
     console.log(responseJson);
     // const showName = responseJson.results[0].name;
     //  const locations = responseJson.results[0].locations;
@@ -146,6 +145,7 @@ function displayResults(responseJson, responseData) {
             // console.log(result.locations[i].display_name);
             // console.log(result.locations[i].url);
             //show info
+            
             $('.results-listing').append(
                 `<li>${responseJson.results[i].name}</li>
             <li>${result.locations[j].display_name}</li>
@@ -157,7 +157,22 @@ function displayResults(responseJson, responseData) {
 
 }
 
+function displayInfo(responseData){
+    console.log(responseData);
+    $('#info-listing').empty();
+    $('#error').empty();
+    for ( let k = 0; k < responseData.genres.length; k++){
+        console.log(responseData.genres[k]);  
+    $('#info').append(
+        `<li>${responseData.genres[k]}</li>`);
+        
+    }
+    $('#summary').append(`<p>${responseData.plotSummary.text}`);
+    $('#rating').append(`<p>${responseData.ratings.rating}`);
+    $('#info').removeClass('hidden');
+}
 
+    
 function watchForm() {
     $('form').submit(e => {
         e.preventDefault();
