@@ -1,13 +1,22 @@
-
+/* font-family: 'Prompt', sans-serif; */
 * {
     box-sizing: border-box;
   }
-  
-  body {
-    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    text-align: center;
- 
+  body { 
+    background: url(image/retrotv.jpeg) no-repeat center center fixed; 
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
   }
+    html {
+      font-family: 'Prompt', sans-serif;
+    text-align: center;
+    text-transform: uppercase;
+  }
+    
+  
+
   #wrapper {
     width: 500px;
     margin: 0 auto;
@@ -16,23 +25,36 @@
   .button, input[type="text"] {
     padding: 5px;
   }
+  p {
+    font-family: 'Prompt', sans-serif;
+    color: black;
+  }
   ul , li {
-    list-style: none;
+    list-style-position: inside;
+    padding: 5px;
+    margin-left: 35px;
   }
   
-  
+
   .button {
     transition-duration: 0.4s;
+    font-family: 'Prompt', sans-serif;
   }
   
   .button:hover {
+    
     background-color: #4CAF50; /* Green */
     color: white;
   }f
   
-  .container {
-    max-width: 600px;
+  .container, section, lk={
+    display: flexbox;
+    justify-content: center;
+    padding: 9px;
+    max-width: 400px;
     margin: 0 auto;
+    background-color: white;
+    color: red;
   }
   
   .error-message {
@@ -42,3 +64,24 @@
   .hidden {
     display: none;
   }
+
+  img.bg {
+    /* Set rules to fill background */
+    min-height: 100%;
+    min-width: 1024px;
+    
+    /* Set up proportionate scaling */
+    width: 100%;
+    height: auto;
+    
+    /* Set up positioning */
+    position: fixed;
+    top: 0;
+    left: 0;
+  }
+  
+  @media screen and (max-width: 1024px) { /* Specific to this particular image */
+    img.bg {
+      left: 50%;
+      margin-left: -512px;   /* 50% */
+    }

@@ -5,9 +5,12 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width">
     <title>Find Your Stream</title>
+    <link href="https://fonts.googleapis.com/css2?family=Prompt:wght@600&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-<body><header>Search Tv or Movies to find where you can Stream!</header>
+<body class='box'>
+    <header>Search Tv or Movies to find where you can Stream!</header>
     <section>
     <div>
         <div>
@@ -23,18 +26,19 @@
         </div>
     </div>
 </section>
-<p id="error" class="error-message"></p>
+<p id="error" class="error-message" class="hidden"></p>
 <section id="results" class="hidden"><div>
+    <p id="error" class="error-message"></p>
     <h2>Results</h2>
     <ul class="results-listing">
     </ul>
 </section>
 </div>
-<section id="info" class='hidden'>  
-    <div id='summary'><p><h3>Plot Summary:</h3></p></div>
-        <div id='rating'><p><h3>Imbd User Rating:</h3></p></div>
+<section class='container' id="info" class='hidden'>  
+    <div id='summary'><p></p></div>
+        <div id='rating'><p><h3></p></div>
     <div>
-        <ul class='info-listing'><p><h3>Genres:</h3></p>
+        <ul class='info-listing'><p></p>
 
         </ul>
         

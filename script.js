@@ -16,9 +16,7 @@ function formatQuery(params) {
 async function handleQuery(query) {
     getInfo(query);
     const showId = await getShowId(query);
-    console.log(showId);
     const showInfo = await getTitleInfo(showId);
-    const castInfo = await getCast(showId);
 }
 
 function getInfo(query) {
@@ -75,9 +73,6 @@ async function getShowId(query, responseJson) {
             throw new Error(response.statusText);
         })
         .then(responseJson => {
-            // console.log(responseJson);
-            // console.log('id find')
-            // console.log(responseJson.d[0].id);
             return responseJson.d[0].id;
 
         })
@@ -116,50 +111,19 @@ async function getTitleInfo(showId) {
             $('#error').text(`Try Again: ${err.message}`);
         });
 }
-async function getCast(showId) {
-    opt = {
-        tconst: showId
-    }
-    const getCast = "https://imdb8.p.rapidapi.com/title/get-top-cast";
-    const queryStr = formatQuery(opt);
-    const getTopCast = getCast + '?' + queryStr;
-    console.log(getTopCast);
-    const options = {
-        headers: new Headers({
-            "x-rapidapi-key": apiKey
-        })
-    };
-    const castInfo = await fetch(getTopCast, options)
-        .then(response => {
-            if (response.ok) {
-                return response.json();
-            }
-            throw new Error(response.statusText)
-        })
-        .then(responseCast => {
-            console.log(responseCast);
-        })
-        .catch(err => {
-            $('#error').text(`Try Again: ${err.message}`);
-        });
-
-}
-
-
 
 function displayResults(responseJson) {
     console.log(responseJson);
-    // const showName = responseJson.results[0].name;
-    //  const locations = responseJson.results[0].locations;
+    
     $('.results-listing').empty();
     $('#error').empty();
     $('#rating').empty();
     $('#summary').empty();
     for (let i = 0; i < responseJson.results.length; i++) {
-        // console.log(i);
+
         let result = responseJson.results[i];
         // show name
-        // console.log(result);
+         console.log(result);
 
         // streaming services:
         for (let j = 0; j < result.locations.length; j++) {
@@ -169,9 +133,8 @@ function displayResults(responseJson) {
             //show info
 
             $('.results-listing').append(
-                `<li>${responseJson.results[i].name}</li>
-            <li>${result.locations[j].display_name}</li>
-            <li><a href=${result.locations[j].url}>Service Link</a>
+                `<li><a href=${responseJson.results[i].external_ids.imdb.url}>${responseJson.results[i].name}</a></li>
+             <li><a href=${result.locations[j].url}>${result.locations[j].display_name}</a>
                 </li>`);
         }
     }
@@ -181,16 +144,12 @@ function displayResults(responseJson) {
 
 function displayInfo(responseData) {
     console.log(responseData);
+    $('.info-listing').empty();
     $('#info-listing').empty();
     $('#error').empty();
-    for (let k = 0; k < responseData.genres.length; k++) {
-        console.log(responseData.genres[k]);
-        $('#info').append(
-            `<li>${responseData.genres[k]}</li>`);
-
-    }
-    $('#summary').append(`<p>${responseData.plotOutline.text}`);
-    $('#rating').append(`<p>${responseData.ratings.rating}`);
+    console.log(responseData.title.image.url)
+    $('#summary').append(`<p>Plot Summery:</p>${responseData.plotOutline.text}`);
+    $('#rating').append(`<p>Imdb Rating:</p>${responseData.ratings.rating}`);
     $('#info').removeClass('hidden');
 }
 
