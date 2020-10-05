@@ -1,87 +1,210 @@
 /* font-family: 'Prompt', sans-serif; */
+
 * {
-    box-sizing: border-box;
-  }
-  body { 
-    background: url(image/retrotv.jpeg) no-repeat center center fixed; 
-    -webkit-background-size: cover;
-    -moz-background-size: cover;
-    -o-background-size: cover;
-    background-size: cover;
-  }
-    html {
-      font-family: 'Prompt', sans-serif;
-    text-align: center;
-    text-transform: uppercase;
-  }
-    
-  
-
-  #wrapper {
-    width: 500px;
-    margin: 0 auto;
+  box-sizing: border-box;
 }
-  
-  .button, input[type="text"] {
-    padding: 5px;
-  }
-  p {
-    font-family: 'Prompt', sans-serif;
-    color: black;
-  }
-  ul , li {
-    list-style-position: inside;
-    padding: 5px;
-    margin-left: 35px;
-  }
-  
+/* body layout nadtext*/ 
+body {
+  background: url(image/filmset.jpeg);
+  background-position: center center;
+  background-attachment: fixed;
+  background-repeat: no-repeat;
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+  font-family: 'Prompt', sans-serif;
+}
 
-  .button {
-    transition-duration: 0.4s;
-    font-family: 'Prompt', sans-serif;
-  }
-  
-  .button:hover {
-    
-    background-color: #4CAF50; /* Green */
-    color: white;
-  }f
-  
-  .container, section, lk={
-    display: flexbox;
-    justify-content: center;
-    padding: 9px;
-    max-width: 400px;
-    margin: 0 auto;
-    background-color: white;
-    color: red;
-  }
-  
-  .error-message {
-      color: red;
-  }
-  
-  .hidden {
-    display: none;
-  }
+ /* form position and style */
+.formcenter {
+  margin-left: 25%;
+  display: flexbox;
+}
 
-  img.bg {
-    /* Set rules to fill background */
-    min-height: 100%;
-    min-width: 1024px;
-    
-    /* Set up proportionate scaling */
-    width: 100%;
-    height: auto;
-    
-    /* Set up positioning */
-    position: fixed;
-    top: 0;
-    left: 0;
+
+form {
+  display: flex;
+  flex-flow: row;
+  align-items: center;
+  /* margin-left: 500px; */
+  padding-top: 200px;
+  font-family: 'Prompt', sans-serif;
+  color: black;
+  text-transform: uppercase;
+  font-size: 21px;
+}
+/* Full-width input fields */
+
+input[type=text] {
+  width: 50%px;
+  padding: 12px 12px 12px 12px;
+  border: 3px solid rgb(245, 56, 9);
+  border-radius: 4px;
+  box-sizing: border-box;
+  font-family: 'Prompt', sans-serif;
+}
+
+label {
+  padding: 12px;
+  display: inline-block;
+}
+
+/* Style the submit button */
+
+input[type=submit] {
+  background-color: #f30b3d;
+  color: white;
+  padding: 12px 20px;
+  border: solid;
+  border-color: rgb(105, 54, 172);
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: 'Prompt', sans-serif;
+  text-align: center;
+}
+
+.group 
+
+
+/* Set a style for the submit button */
+
+.button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 16px 20px;
+  border-color: black;
+  border-style: solid;
+  ;
+  cursor: pointer;
+  width: 100px;
+  opacity: 0.9;
+  float: left;
+}
+
+.button:hover {
+  opacity: 1;
+}
+
+
+/* containers layouts tricks */
+.information {
+  display: flexbox;
+  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+  text-transform: uppercase;
+  border-color: red;
+  border-style: solid;
+  background: rgb(121, 118, 112);
+  max-width: 40%;
+}
+
+
+.container {
+  display: flexbox;
+   max-width: auto: padding: 12px;
+  font-family: 'Prompt', sans-serif;
+  /* position: relative; */
+  text-align: center;
+  color: white;
+}
+
+.error-message {
+  color: red;
+}
+
+.hidden {
+  display: none;
+}
+
+.summarytext{
+  display: flexbox;
+  background-color: white;
+  border: solid;
+  border-color: red;
+  border-radius: 5px;
+  padding: 13px 13px;
+  max-width: 25%;
+  margin-left: 35%;
+
+}
+
+
+
+p, section {
+  text-align: center;
+  font-family: 'Prompt', sans-serif;
+  text-transform: uppercase;
+}
+/* images - poster */
+img {
+  display: flexbox;
+  max-width: 50%;
+  max-height: auto;
+  margin: 0 auto;
+}
+
+
+
+/* list and links */
+ul {
+  font-size: 20px;
+  max-width: 400px;
+  list-style-type: none;
+  background: red;
+  padding: 1px;
+  font-family: 'Prompt', sans-serif;
+  color: black;
+}
+
+ul li {
+  list-style-type: none;
+  background: white;
+  margin: 2px;
+}
+a:link {
+  text-decoration: none;
+}
+
+/* unvisited link */
+
+a:link {
+  color: black;
+}
+
+/* visited link */
+
+a:visited {
+  color: orange;
+}
+
+/* mouse over link */
+
+a:hover {
+  color: hotpink;
+}
+
+/* selected link */
+
+a:active {
+  color: blue;
+}
+
+
+
+/* @media screen and (max-width: 400px) {
+   #one { 
+    float: none;
+    margin-right:0;
+    width:auto;
+    border:0;
+    border-bottom:2px solid #000;    
   }
-  
-  @media screen and (max-width: 1024px) { /* Specific to this particular image */
-    img.bg {
-      left: 50%;
-      margin-left: -512px;   /* 50% */
-    }
+} */
+
+@media screen and (max-width: 1024px) {
+  /* Specific to this particular image */
+  img-bg {
+    left: 50%;
+    margin-left: -512px;
+    /* 50% */
+  }

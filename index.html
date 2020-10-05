@@ -9,42 +9,61 @@
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&display=swap" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css" />
 </head>
-<body class='box'>
-    <header>Search Tv or Movies to find where you can Stream!</header>
-    <section>
-    <div>
-        <div>
-            <form id="form">
-                <label for='search-term'>Search: Enter Movie or Show</label>
-                    <input type="text" name="search" id='search-term'>
-                    
 
-                    <input type='submit' class="button" value="Get Info">
-    
+<body>
+
+
+    <div class="formcenter">
+        <div class="container">
+
+            <form id="form">
+
+                <label for='search-term'> Enter Movie or Show:</label>
+                <input type="text" name="search" id='search-term'>
+
+
+                <input type='submit' class="button" value="Get Info">
             </form>
-             
         </div>
     </div>
-</section>
-<p id="error" class="error-message" class="hidden"></p>
-<section id="results" class="hidden"><div>
-    <p id="error" class="error-message"></p>
-    <h2>Results</h2>
-    <ul class="results-listing">
-    </ul>
-</section>
-</div>
-<section class='container' id="info" class='hidden'>  
-    <div id='summary'><p></p></div>
-        <div id='rating'><p><h3></p></div>
-    <div>
-        <ul class='info-listing'><p></p>
 
-        </ul>
-        
+    <p id="error" class="error-message" class="hidden"></p>
+    <div class="group">
+        <div class='wrapper hidden'>
+
+            <section id="results" class='section-left'>
+
+                <p id="error" class="error-message"></p>
+                <h2>Results</h2>
+                <ul class="results-listing">
+                </ul>
+        </div>
+        </section>
+        <secttion id='info-listing'>
+            <div>
+                <ul class='info-listing hidden summarytext'></ul>
+            </div>
+        </secttion>
+        <section id='summary' class='summarytext hidden'>
+            <div>
+
+                <p></p>
+                <div>
+                    <ul>
+                        <li></li>
+                    </ul>
+                </div>
+            </div>
+
+        </section>
     </div>
-</section>
-<script src="https://code.jquery.com/jquery-3.3.1.js"
+    </div>
+    <div>
+        <section id='poster'>
+
+        </section>
+    </div>
+    <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <!-- <script src="actor.js"></script> -->
