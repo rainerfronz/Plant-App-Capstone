@@ -154,7 +154,7 @@ function displayInfo(responseData) {
     $('#error').empty();
     for (let k = 0; k < responseData.genres.length; k++) {
         console.log(responseData.genres[k]);
-        $('#summary').append(            `<ul><li>${responseData.genres[k]}</li></ul>`);
+        $('#summary').append( `<ul><li>${responseData.genres[k]}</li></ul>`);
 
     }
     

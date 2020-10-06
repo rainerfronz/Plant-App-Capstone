@@ -15,6 +15,14 @@ body {
   background-size: cover;
   font-family: 'Prompt', sans-serif;
 }
+header {
+  font-family: 'Prompt', sans-serif;
+  text-transform: uppercase;
+  font-size:  25px;
+  text-align: center;
+  color:black;
+  text-shadow: 2px 2px #FF0000;
+}
 
  /* form position and style */
 .formcenter {
@@ -64,7 +72,10 @@ input[type=submit] {
   text-align: center;
 }
 
-.group 
+.group {
+  display: flexbox;
+  flex-direction: row;
+}
 
 
 /* Set a style for the submit button */
@@ -88,24 +99,27 @@ input[type=submit] {
 
 
 /* containers layouts tricks */
-.information {
-  display: flexbox;
-  font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-  text-transform: uppercase;
-  border-color: red;
-  border-style: solid;
-  background: rgb(121, 118, 112);
-  max-width: 40%;
+.results-listing {
+  desplay: inline-flexbox;
+  margin-left: 30px;
+
+
 }
-
-
 .container {
   display: flexbox;
-   max-width: auto: padding: 12px;
+   max-width: auto; 
+   padding: 12px;
   font-family: 'Prompt', sans-serif;
   /* position: relative; */
   text-align: center;
   color: white;
+  display: inline-block;
+  vertical-align: top;
+
+}
+.summary-action {
+  display: inline-flexbox;
+  flex: row;
 }
 
 .error-message {
