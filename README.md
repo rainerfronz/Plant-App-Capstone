@@ -10,3 +10,4 @@ See Image from Movie or show as well as Plot Summery, Imdb rating and genres.
 
 For this app  I used the following technologies, CSS, fetch, jquery, HTZML,
 and Java Script. 
+
