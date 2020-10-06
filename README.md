@@ -14,4 +14,5 @@ and Java Script.
 ![Getting Started](image/Screenshot 2020-10-06 at 4.27.35 PM.png)
 ![Getting Started](image/Screenshot 2020-10-06 at 4.26.31 PM.png)
 ![Getting Started](image/Screenshot 2020-10-06 at 4.27.42 PM.png)
+image/Screenshot 2020-10-06 at 4.26.31 PM.png
 
