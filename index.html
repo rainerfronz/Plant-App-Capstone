@@ -11,11 +11,11 @@
 </head>
 
 <body>
-    <header>Find the streaming service for a movie or show.</header>
+    <header>Find a streaming service for a movie or show.</header>
 
 
     <div class="formcenter">
-        <div class="container">
+        <div class=" flex-container">
 
             <form id="form">
 
@@ -29,36 +29,46 @@
     </div>
 
     <p id="error" class="error-message" class="hidden"></p>
+    <section>
+        <div class='hidden'>
+        
+        </div>
 
-           <section id="results" class="hidden">
+        <div id="results" class="hidden flex-container">
 
-                
-                <h2>Results</h2>
+
+
+
+            <div>
+                `<h3>Title and Service:</h3>
                 <ul class="results-listing">
                 </ul>
-        </section>
-        <section id='summary' class='summarytext summer-action hidden'>
-            <div>
 
-                <p></p>
-                <div>
-                    <ul>
-                    </ul>
-                </div>
+
+
+
             </div>
+            <div id='poster' class="wide">
 
-        </section>
-    </div>
+
+            </div>
+        <
+    </section>
+
+    <section id='summary' class='hidden formcenter'>
+        <div><h3>Genres:</h3></h3>
+                <ul class='results-listing container'>
+                </ul>    
+        </div>
+    
+    </section>
     <br>
-    <div>
 
-        <section id='poster'>
-
-        </section>
     <script src="https://code.jquery.com/jquery-3.3.1.js"
         integrity="sha256-2Kok7MbOyxpgUVvAk/HJ2jigOSYS2auK4Pfzbm7uH60=" crossorigin="anonymous"></script>
     <script src="script.js"></script>
     <!-- <script src="actor.js"></script> -->
 
 </body>
+
 </html>

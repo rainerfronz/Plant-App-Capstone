@@ -14,6 +14,7 @@ body {
   -o-background-size: cover;
   background-size: cover;
   font-family: 'Prompt', sans-serif;
+  text-align: center;
 }
 header {
   font-family: 'Prompt', sans-serif;
@@ -29,14 +30,16 @@ header {
   margin-left: 25%;
   display: flexbox;
 }
+h2 {
+  text-align: center;
+}
 
 
 form {
-  display: flex;
-  flex-flow: row;
-  align-items: center;
+  display: flexbox;
+  margin-right: 300px;
   /* margin-left: 500px; */
-  padding-top: 200px;
+  padding-top: 59px;
   font-family: 'Prompt', sans-serif;
   color: black;
   text-transform: uppercase;
@@ -46,11 +49,14 @@ form {
 
 input[type=text] {
   width: 50%px;
-  padding: 12px 12px 12px 12px;
+  padding: 9px 9px 9px 9px;
   border: 3px solid rgb(245, 56, 9);
   border-radius: 4px;
   box-sizing: border-box;
   font-family: 'Prompt', sans-serif;
+  text-transform: uppercase;
+  
+
 }
 
 label {
@@ -63,7 +69,7 @@ label {
 input[type=submit] {
   background-color: #f30b3d;
   color: white;
-  padding: 12px 20px;
+  padding: 9px 20px;
   border: solid;
   border-color: rgb(105, 54, 172);
   border-radius: 4px;
@@ -72,10 +78,24 @@ input[type=submit] {
   text-align: center;
 }
 
-.group {
-  display: flexbox;
-  flex-direction: row;
+.flex-container {
+  display: flex;
+  display: inline-flex;
+  f
 }
+.fit {
+  flex: 2;
+}
+.
+ 
+  /* Just so it's visible */
+
+.wide {
+  flex: 1;
+  
+}
+
+
 
 
 /* Set a style for the submit button */
@@ -83,14 +103,14 @@ input[type=submit] {
 .button {
   background-color: #4CAF50;
   color: white;
-  padding: 16px 20px;
+  padding: 9px 12px;
   border-color: black;
   border-style: solid;
   ;
   cursor: pointer;
   width: 100px;
   opacity: 0.9;
-  float: left;
+  
 }
 
 .button:hover {
@@ -98,29 +118,25 @@ input[type=submit] {
 }
 
 
-/* containers layouts tricks */
+/* .containers layouts tricks */ */
 .results-listing {
-  desplay: inline-flexbox;
+  display: inline-flexbox;
   margin-left: 30px;
 
-
+ 
 }
-.container {
+ .container {
   display: flexbox;
-   max-width: auto; 
-   padding: 12px;
-  font-family: 'Prompt', sans-serif;
-  /* position: relative; */
+   max-width: 35%; 
+   padding: 1px;
+  font-family: 'Prompt', sans-serif; */
+  position: relative;
   text-align: center;
-  color: white;
-  display: inline-block;
-  vertical-align: top;
+
+  
 
 }
-.summary-action {
-  display: inline-flexbox;
-  flex: row;
-}
+
 
 .error-message {
   color: red;
@@ -130,17 +146,7 @@ input[type=submit] {
   display: none;
 }
 
-.summarytext{
-  display: flexbox;
-  background-color: white;
-  border: solid;
-  border-color: red;
-  border-radius: 5px;
-  padding: 13px 13px;
-  max-width: 25%;
-  margin-left: 35%;
 
-}
 
 
 
@@ -152,28 +158,44 @@ p, section {
 /* images - poster */
 img {
   display: flexbox;
-  max-width: 50%;
+  max-width: 70%;
   max-height: auto;
-  margin: 0 auto;
+  border: solid;
+  border-color: red;
+}
+#summary {
+  max-width: 45%;
 }
 
-
+.results-listing{
+  width: auto;
+  border: none;
+}
 
 /* list and links */
 ul {
+  text-align: center;
+
   font-size: 20px;
-  max-width: 400px;
+  max-width:auto;
   list-style-type: none;
-  background: red;
+  border: solid;
+  border-width: 4px;
+  border-color: red;
   padding: 1px;
   font-family: 'Prompt', sans-serif;
+  display: flexbox;
   color: black;
+  
+  background-color:white;
 }
 
 ul li {
   list-style-type: none;
   background: white;
-  margin: 2px;
+  text-align: center;
+  
+  
 }
 a:link {
   text-decoration: none;
@@ -202,23 +224,11 @@ a:hover {
 a:active {
   color: blue;
 }
+p {
+  max-width: 80px;
+  text-align: center;
+  
+}
 
 
 
-/* @media screen and (max-width: 400px) {
-   #one { 
-    float: none;
-    margin-right:0;
-    width:auto;
-    border:0;
-    border-bottom:2px solid #000;    
-  }
-} */
-
-@media screen and (max-width: 1024px) {
-  /* Specific to this particular image */
-  img-bg {
-    left: 50%;
-    margin-left: -512px;
-    /* 50% */
-  }

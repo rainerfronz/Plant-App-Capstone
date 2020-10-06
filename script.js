@@ -79,8 +79,6 @@ async function getShowId(query, responseJson) {
         .catch(err => {
             $('#error').text(`Try Again: ${err.message}`);
         })
-
-    // console.log(showId);
     return showId;
 }
 
@@ -124,13 +122,11 @@ function displayResults(responseJson) {
 
         let result = responseJson.results[i];
         // show name
-         console.log(result);
+       
 
         // streaming services:
         for (let j = 0; j < result.locations.length; j++) {
-            // console.log(j);
-            // console.log(result.locations[i].display_name);
-            // console.log(result.locations[i].url);
+            g(result.locations[i].url);
             //show info
 
             $('.results-listing').append(
@@ -149,18 +145,16 @@ function displayResults(responseJson) {
 }
 
 function displayInfo(responseData) {
-    console.log(responseData);
     $('#info-listing').empty();
     $('#error').empty();
     for (let k = 0; k < responseData.genres.length; k++) {
-        console.log(responseData.genres[k]);
-        $('#summary').append( `<ul><li>${responseData.genres[k]}</li></ul>`);
+        $('#summary').append(`<ul><li>${responseData.genres[k]}</li></ul>`);
 
     }
     
     $('#poster').append(`<img src=${responseData.title.image.url}/>`);
-    $('#summary').append(`<p>Plot Summery:</p><ul><li>${responseData.plotOutline.text}</li><ul>`);
-    $('#summary').append(`<p>Imdb Rating:</p><ul><li>${responseData.ratings.rating}`);
+    $('#summary').append(`<ul><li><h3>Plot Summery:</h3>${responseData.plotOutline.text}</li>
+    <li><h3>Imdb Rating:</h3>${responseData.ratings.rating}</li></ul>`);
     $('#summary').removeClass('hidden');
 }
 
