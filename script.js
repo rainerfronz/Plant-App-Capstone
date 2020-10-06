@@ -5,7 +5,7 @@ const search = "https://imdb8.p.rapidapi.com/title/auto-complete";
 
 //function to set paramaters
 function formatQuery(params) {
-    // console.log('it works');
+    
     //create an array of the keys in the "params" object
     const queryItems = Object.keys(params)
         .map(key => `${key}=${params[key]}`)
@@ -55,9 +55,9 @@ async function getShowId(query, responseJson) {
 
     const queryString = formatQuery(param);
     const infoURL = search + '?' + queryString;
-    console.log(param);
-    console.log(search);
-    console.log(queryString);
+    
+    
+    
 
     const options = {
         headers: new Headers({
@@ -79,6 +79,8 @@ async function getShowId(query, responseJson) {
         .catch(err => {
             $('#error').text(`Try Again: ${err.message}`);
         })
+
+    
     return showId;
 }
 
@@ -112,7 +114,7 @@ async function getTitleInfo(showId) {
 }
 
 function displayResults(responseJson) {
-    console.log(responseJson);
+    
     
     $('.results-listing').empty();
     $('#error').empty();
@@ -122,11 +124,13 @@ function displayResults(responseJson) {
 
         let result = responseJson.results[i];
         // show name
-       
+         console.log(result);
 
         // streaming services:
         for (let j = 0; j < result.locations.length; j++) {
-            g(result.locations[i].url);
+            
+            
+        
             //show info
 
             $('.results-listing').append(

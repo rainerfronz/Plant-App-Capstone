@@ -145,6 +145,17 @@ input[type=submit] {
 .hidden {
   display: none;
 }
+@media all and (min-width: 800px) {
+
+  section, h1 {
+    padding: 0 10%;
+  }
+
+  .group, div{
+    flex-direction: row;
+  }
+
+}
 
 
 
